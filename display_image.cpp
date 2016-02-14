@@ -158,8 +158,20 @@ void displayImages() {
 }
 
 void saveImages(Mat leftImage, Mat rightImage, int pairIndex) {
+    
+    /*
+    cameraImagePoints[0] , cameraImagePoints[1]
+    they are N×2 matrices containing left and right pixel
+    cordinates of all the object reference points supplied in 
+    object points.
+    in our case of using Chessboard for calibration
+    ,cameraImagePoints[0] and cameraImagePoints[1] 
+    are the returned values from the M calls to CvFindChessboardCorners()
+    */
     cameraImagePoints[0].push_back(cornersLeft);
     cameraImagePoints[1].push_back(cornersRight);
+    
+    
     if (calibType == 1) {
         cvtColor(leftImage, leftImage, COLOR_BGR2GRAY);
         cvtColor(rightImage, rightImage, COLOR_BGR2GRAY);
@@ -172,7 +184,20 @@ void saveImages(Mat leftImage, Mat rightImage, int pairIndex) {
 }
 
 void calibrateStereoCamera(Size imageSize) {
+    
+    /*
+    objectPoints is a N×3 matrix containing 
+    the physical coordinates of each of the K points 
+    on each of the M images used in calibration of the 3D object (chessboard)
+    such that N = K × X
+    
+    in our case of using chessboard as 3D object ,
+    thies points are located in the coordinate frame attached to the object-settings,
+    assuming the upper left corner of the chessboard to be the origin
+    */
     vector<vector<Point3f> > objectPoints;
+    
+    
     objectPoints.resize(noOfStereoPairs);
     for (int i=0; i<noOfStereoPairs; i++) {
         for (int j=0; j<boardSize.height; j++) {
@@ -200,6 +225,7 @@ cout<<"\n\n ------- "<<cameraImagePoints[1].size() << "     ------------ - \n\n"
     Mat cameraMatrix[2], distCoeffs[2];
     cameraMatrix[0] = Mat::eye(3, 3, CV_64F);
     cameraMatrix[1] = Mat::eye(3, 3, CV_64F);
+    
     Mat R, T, E, F;
     TermCriteria criteria = TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 100, 1e-5);
 
