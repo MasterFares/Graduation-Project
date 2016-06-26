@@ -27,40 +27,8 @@
  -w, --width (value:7)                      Width of the board
  Example:   ./stereo_calib                                              Clicks stereo images at run time.
  ./stereo_calib -rt=0 -prel=left_ -prer=right_ -post=jpg     RealTime id off ie images should be loaded from disk. With images named left_1.jpg, right_1.jpg etc.
- Cheers
- Abhishek Upperwal
- ***********************************************************************/
-/* *************** License:**************************
- By downloading, copying, installing or using the software you agree to this license.
- If you do not agree to this license, do not download, install, copy or use the software.
- License Agreement
- For Open Source Computer Vision Library
- (3-clause BSD License)
- Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
- Neither the names of the copyright holders nor the names of the contributors may be used to endorse or promote products derived from this software without specific prior written permission.
- This software is provided by the copyright holders and contributors “as is” and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall copyright holders or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of
- the use of this software, even if advised of the possibility of such damage.
- ************************************************** */
 
-/* ************* Original reference:**************
- Oct. 3, 2008
- BOOK:It would be nice if you cited it:
- Learning OpenCV: Computer Vision with the OpenCV Library
- by Gary Bradski and Adrian Kaehler
- Published by O'Reilly Media, October 3, 2008
- AVAILABLE AT:
- http://www.amazon.com/Learning-OpenCV-Computer-Vision-Library/dp/0596516134
- Or: http://oreilly.com/catalog/9780596516130/
- ISBN-10: 0596516134 or: ISBN-13: 978-0596516130
- OPENCV WEBSITES:
- Homepage:      http://opencv.org
- Online docs:   http://docs.opencv.org
- Q&A forum:     http://answers.opencv.org
- Issue tracker: http://code.opencv.org
- GitHub:        https://github.com/Itseez/opencv/
- ************************************************** */
+ ***********************************************************************/
 
 
 #include <opencv2/calib3d/calib3d.hpp>
